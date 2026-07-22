@@ -1,4 +1,4 @@
-# Basic Amazon ECS Project
+# Amazon ECS Project
 
 ## Deploy a Python Flask Application using Docker, ECR and ECS Fargate
 
