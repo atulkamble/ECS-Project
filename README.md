@@ -45,7 +45,7 @@ Ref: ([AWS Documentation][1])
 # 1. Project structure
 
 ```text
-ecs-flask-project/
+ECS-Project/
 ├── app.py
 ├── requirements.txt
 ├── Dockerfile
@@ -57,8 +57,8 @@ ecs-flask-project/
 Create the project:
 
 ```bash
-mkdir ecs-flask-project
-cd ecs-flask-project
+mkdir ECS-Project
+cd ECS-Project
 ```
 
 ---
