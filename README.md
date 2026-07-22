@@ -229,7 +229,31 @@ venv
 
 ---
 
+## ▶️ Run the Application
+
+```bash
+# Check Python version
+python --version
+
+# Check pip version
+pip --version
+
+# Install project dependencies
+pip install -r requirements.txt
+
+# Start the application
+python app.py
+```
+
+Once the application starts, open your browser and access:
+
+```text
+http://localhost:5000/
+```
+
 # 6. Test the application locally
+
+## Keep Docker Desktop/Docker Engine running in background 
 
 ## Build the image
 
