@@ -25,8 +25,20 @@ Python Flask Application
 Docker Image Storage:
 Local Docker → Amazon ECR → ECS Fargate
 ```
+## 📖 Overview
 
-Amazon ECS manages containerized applications. With AWS Fargate, AWS manages the underlying servers, while you configure the task CPU, memory, networking and container image. ([AWS Documentation][1])
+Amazon ECS (Elastic Container Service) is a fully managed container orchestration service that simplifies deploying and managing containerized applications.
+
+With **AWS Fargate**, AWS manages the underlying infrastructure, so you only need to configure:
+
+- 🐳 Container image
+- ⚙️ CPU & Memory
+- 🌐 Networking
+- 🔐 IAM permissions
+
+This project demonstrates how to deploy a containerized application on **Amazon ECS using AWS Fargate** without managing EC2 instances.
+
+Ref: ([AWS Documentation][1])
 
 ---
 
