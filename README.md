@@ -642,11 +642,11 @@ Create `task-definition.json`:
   ],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::535002879962:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "ecs-flask-container",
-      "image": "ACCOUNT_ID.dkr.ecr.ap-south-1.amazonaws.com/ecs-flask-app:latest",
+      "image": "535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest",
       "essential": true,
       "portMappings": [
         {
@@ -675,7 +675,7 @@ Create `task-definition.json`:
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "/ecs/ecs-flask-app",
-          "awslogs-region": "ap-south-1",
+          "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
       }
