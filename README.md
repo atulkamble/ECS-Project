@@ -1315,6 +1315,13 @@ docker image rm ecs-flask-app:latest
 docker image rm ecs-flask-app:v2
 ```
 
+# Delete Resources 
+##  delete ECR
+## Delete ECS
+- stop task 
+- delete ECS 
+
+
 ---
 
 # 25. Important concepts to remember
