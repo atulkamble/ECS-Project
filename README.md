@@ -42,6 +42,108 @@ Ref: ([AWS Documentation][1])
 
 ---
 
+## ⚡ Quick Start
+
+### Manual Run
+
+```bash
+git clone https://github.com/atulkamble/ECS-Project.git
+cd ECS-Project
+code .
+
+python3 --version
+pip3 --version
+
+pip install -r requirements.txt
+python3 app.py
+```
+
+Open: `http://localhost:5000`
+
+### Windows — Virtual Environment
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+## 🐳 ECR — Build, Tag & Push
+
+```bash
+# Authenticate Docker with ECR
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 535002879962.dkr.ecr.us-east-1.amazonaws.com
+
+# Build the image (cross-platform: linux/amd64)
+docker buildx build --platform linux/amd64 -t cloudnautic/ecsflaskapp:latest --load .
+docker images
+
+# Tag the image for ECR
+docker tag cloudnautic/ecsflaskapp:latest 535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest
+
+# Push the image to ECR
+docker push 535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest
+
+# Run locally from ECR image
+docker run -d -p 5000:5000 535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest
+```
+
+Manage containers:
+
+```bash
+docker container ls
+docker container stop <CONTAINER_ID>
+docker container start <CONTAINER_ID>
+```
+
+Open: `http://localhost:5000`
+
+---
+
+## ☁️ AWS CLI
+
+```bash
+# Check version
+aws --version
+
+# Configure credentials
+aws configure
+```
+
+```text
+AWS Access Key ID [****************UHPQ]:
+AWS Secret Access Key [****************O+cg]:
+Default region name [us-east-1]:
+Default output format [json]:
+```
+
+```bash
+aws sts get-caller-identity
+```
+
+---
+
+## 🚀 ECS — Environment Variables
+
+```bash
+export AWS_REGION=us-east-1
+export ECR_REPOSITORY=cloudnautic/ecsflaskapp
+export ECS_CLUSTER=ecs-cluster
+export ECS_SERVICE=ecs-flask-service
+export TASK_FAMILY=ecs-flask-task
+export ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+
+echo $AWS_REGION
+echo $ECR_REPOSITORY
+echo $ECS_CLUSTER
+echo $ECS_SERVICE
+echo $TASK_FAMILY
+echo $ACCOUNT_ID
+```
+
+---
+
 # 1. Project structure
 
 ```text

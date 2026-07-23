@@ -6,11 +6,11 @@
   ],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::535002879962:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "ecs-flask-container",
-      "image": "535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest",
+      "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/ecsflaskapp:latest",
       "essential": true,
       "portMappings": [
         {
